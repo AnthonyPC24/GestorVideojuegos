@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestorJuegos
 {
-    public partial class Form1 : Form
+    public partial class FormGestor : Form
     {
-        public Form1()
+        public FormGestor()
         {
             InitializeComponent();
         }
