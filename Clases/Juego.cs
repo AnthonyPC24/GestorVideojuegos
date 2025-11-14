@@ -9,6 +9,7 @@ namespace GestorJuegos.Clases
     public class Juego
     {
         public string avatar { get; set; }
+        public string nombreJugador { get; set; }
         public int numPreguntas { get; set; }
         public string dificultad { get; set; }
         public int puntuacion { get; set; }

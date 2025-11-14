@@ -15,8 +15,8 @@ using Newtonsoft.Json.Linq;
 namespace GestorJuegos
 {
     public partial class FormGestor : Form
-    
-    { 
+
+    {
         List<Juego> listaJuegos;
 
         public FormGestor()
@@ -31,7 +31,7 @@ namespace GestorJuegos
             openFile.InitialDirectory = Application.StartupPath;
             openFile.Filter = "Ficheros JSON(*.json)|*.json";
 
-            if(openFile.ShowDialog().Equals(DialogResult.OK))
+            if (openFile.ShowDialog().Equals(DialogResult.OK))
             {
                 textBoxRutaArchivo.Text = openFile.FileName;
 
@@ -42,6 +42,19 @@ namespace GestorJuegos
                 dataGridViewJuegos.AutoResizeColumns();
             }
         }
-    }            
-        
+
+        private void dataGridViewJuegos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewJuegos.CurrentRow != null)
+            {
+                var juego = (Juego)dataGridViewJuegos.CurrentRow.DataBoundItem;
+
+                if (!String.IsNullOrEmpty(juego.avatar) && File.Exists(juego.avatar))
+                {
+
+                }
+            }
+        }
+
+    }
 }
