@@ -27,7 +27,7 @@ namespace GestorJuegos
                 formGestor.Show();
 
                 // Ocultamos el login
-                this.Hide();
+                this.Close();
             }
             else
             {
