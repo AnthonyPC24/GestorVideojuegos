@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using GestorJuegos.Modelos;
 
+
 namespace GestorJuegos
 {
     public partial class FormInicio : Form
@@ -23,11 +24,12 @@ namespace GestorJuegos
             if (gestor.ValidarUsuario(usuario, contraseña))
             {
                 // Si el login es correcto, abrimos el FormGestor
-                FormGestor formGestor = new FormGestor();
+                GestorJuegos formGestor = new GestorJuegos();
                 formGestor.Show();
 
                 // Ocultamos el login
-                this.Close();
+                this.Hide();
+
             }
             else
             {
@@ -35,6 +37,7 @@ namespace GestorJuegos
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
+
             }
         }
     }

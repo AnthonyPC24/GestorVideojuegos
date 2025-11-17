@@ -38,6 +38,7 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.10.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -111,6 +112,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -128,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gitignore.txt" />
+    <None Include="Resources\gestor-de-fondos %281%29.png" />
+    <None Include="Resources\tiempo-rapido.png" />
+    <None Include="Resources\puntuacion-mas-alta.png" />
+    <None Include="Resources\maquina-de-arcade.png" />
+    <None Include="Resources\juego-de-preguntas.png" />
+    <None Include="Resources\tarjetas.png" />
     <None Include="Json\usuarios.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
