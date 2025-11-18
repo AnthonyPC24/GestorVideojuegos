@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using GestorJuegos.Clases;
 using Newtonsoft.Json.Linq;
 using Microsoft.VisualBasic;
+using System.Windows.Forms.DataVisualization.Charting;
 namespace GestorJuegos
 {
     public partial class GestorJuegos : Form
@@ -56,14 +57,25 @@ namespace GestorJuegos
             dataGridViewJuegos.RowHeadersVisible = false;
             dataGridViewJuegos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 122, 204);
             dataGridViewJuegos.DefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridViewJuegos.Width = 838;
-            dataGridViewJuegos.Height = 150;
             dataGridViewJuegos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // columnas se ajustan al ancho
             dataGridViewJuegos.AllowUserToResizeColumns = false; // evita que el usuario cambie tamaño
             dataGridViewJuegos.AllowUserToResizeRows = false;
 
-
+           
             dataGridViewJuegos.SelectionChanged += dataGridViewJuegos_SelectionChanged;
+
+
+
+            radioButton5.CheckedChanged += RadioButtonsEstadisticas_CheckedChanged;
+            radioButton10.CheckedChanged += RadioButtonsEstadisticas_CheckedChanged;
+            radioButton15.CheckedChanged += RadioButtonsEstadisticas_CheckedChanged;
+            radioButtonTodos.CheckedChanged += RadioButtonsEstadisticas_CheckedChanged;
+
+            chartStats.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Montserrat", 10);
+            chartStats.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Montserrat", 10);
+            chartStats.Legends[0].Font = new Font("Montserrat", 10);
+
+            chartStats.Visible = false;
 
         }
 
@@ -78,7 +90,8 @@ namespace GestorJuegos
             {
                 textBoxRutaArchivo.Text = openFile.FileName;
 
-                JArray jarrayJuegos = JArray.Parse(File.ReadAllText(textBoxRutaArchivo.Text, Encoding.Default));
+                string contenidoJson = File.ReadAllText(textBoxRutaArchivo.Text, Encoding.UTF8);
+                JArray jarrayJuegos = JArray.Parse(contenidoJson);
                 listaJuegos = jarrayJuegos.ToObject<List<Juego>>();
 
                 dataGridViewJuegos.DataSource = listaJuegos;
@@ -86,12 +99,52 @@ namespace GestorJuegos
             }
         }
 
-        private void dataGridViewJuegos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        // Manejar el evento CheckedChanged de los RadioButtons
+        private void RadioButtonsEstadisticas_CheckedChanged(object sender, EventArgs e)
         {
+            chartStats.Visible = true;
 
+            RadioButton rb = sender as RadioButton;
 
+            if (rb != null && rb.Checked)
+            {
+                int cantidad = int.Parse(rb.Tag.ToString());
+                generarEstadistica(cantidad);
+            }
         }
 
+        //Generar estadística de los mejores jugadores
+        private void generarEstadistica(int cantidad)
+        {
+            if (listaJuegos == null || listaJuegos.Count == 0) return;
+
+            // Limpiar gráfico
+            chartStats.Series.Clear();
+            chartStats.ChartAreas.Clear();
+
+            // Añadir ChartArea
+            if (chartStats.ChartAreas.Count == 0)
+                chartStats.ChartAreas.Add(new ChartArea());
+
+            // Ordenar por puntuación 
+            var datosOrdenados = listaJuegos.OrderByDescending(x => x.puntuacion).ToList();
+            List<Juego> juegosParaGraficar = (cantidad == -1) ? datosOrdenados : datosOrdenados.Take(cantidad).ToList();
+
+            // Serie Puntuación
+            var seriePuntos = chartStats.Series.Add("Puntuación");
+            seriePuntos.ChartType = SeriesChartType.Column;
+
+            // Serie Errores
+            var serieErrores = chartStats.Series.Add("Errores");
+            serieErrores.ChartType = SeriesChartType.Column;
+            serieErrores.Color = Color.Red; // Para diferenciar visualmente
+
+            foreach (var j in juegosParaGraficar)
+            {
+                seriePuntos.Points.AddXY(j.nombreJugador, j.puntuacion);
+                serieErrores.Points.AddXY(j.nombreJugador, j.errores);
+            }
+        }
 
         private void dataGridViewJuegos_SelectionChanged(object sender, EventArgs e)
         {
@@ -111,11 +164,6 @@ namespace GestorJuegos
             labelPuntuacion.Text = $"Puntuación: {juego.puntuacion}";
             labelErrores.Text = $"Errores: {juego.errores}";
             labelTiempo.Text = $"Tiempo: {juego.tiempoPartida}";
-        }
-
-        private void panelDetalle_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void buttonEliminar_Click_1(object sender, EventArgs e)
@@ -140,6 +188,7 @@ namespace GestorJuegos
                     {
                         File.Delete(archivoSeleccionado);
                         MessageBox.Show("Archivo eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dataGridViewJuegos.DataSource = null;
                     }
                     catch (Exception ex)
                     {
@@ -192,5 +241,48 @@ namespace GestorJuegos
             }
         }
 
+        private void dataGridViewJuegos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            GuardaCambiosJson();
+        }
+
+        private void GuardaCambiosJson()
+        {
+            try
+            {
+                string rutaArchivo = textBoxRutaArchivo.Text;
+
+                if (string.IsNullOrWhiteSpace(rutaArchivo) || !File.Exists(rutaArchivo))
+                {
+                    MessageBox.Show("Ruta de archivo no válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                listaJuegos = dataGridViewJuegos.DataSource as List<Juego>;
+
+                string jsonActualizado = Newtonsoft.Json.JsonConvert.SerializeObject(listaJuegos, Newtonsoft.Json.Formatting.Indented);
+
+                File.WriteAllText(rutaArchivo, jsonActualizado);
+
+                MessageBox.Show("Cambios guardados correctamente en el archivo JSON.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar los cambios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            chartStats.Series.Clear();
+            chartStats.Visible = false;
+        }
+
+        private void GestorJuegos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
