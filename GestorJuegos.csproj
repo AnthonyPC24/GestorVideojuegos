@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Juego.cs" />
+    <Compile Include="Clases\Usuarios.cs" />
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,7 +130,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Avatars\Ballerina_Cappuccina.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Avatars\Brr_Brr_Patapim.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Avatars\Cappuccino_Assassino.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Avatars\Cocofanto_Elefanto.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Avatars\Orangutan_Ananasini.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Avatars\Tung_Tung_Sahur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="gitignore.txt" />
+    <Content Include="Resources\settings.png" />
     <None Include="Resources\gestor-de-fondos %281%29.png" />
     <None Include="Resources\tiempo-rapido.png" />
     <None Include="Resources\puntuacion-mas-alta.png" />

@@ -16,5 +16,6 @@ namespace GestorJuegos.Clases
         public int errores { get; set; }   
         public string tiempoPartida { get; set; }
         public string fechaHorainicio { get; set; }
+        public int pistasUsadas {  get; set; }
     }
 }

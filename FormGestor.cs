@@ -164,6 +164,7 @@ namespace GestorJuegos
             labelPuntuacion.Text = $"Puntuación: {juego.puntuacion}";
             labelErrores.Text = $"Errores: {juego.errores}";
             labelTiempo.Text = $"Tiempo: {juego.tiempoPartida}";
+            labelAyudas.Text = $"Ayudas: {juego.pistasUsadas}";
         }
 
         private void buttonEliminar_Click_1(object sender, EventArgs e)
@@ -230,8 +231,7 @@ namespace GestorJuegos
                     {
                         File.Move(archivoActual, nuevoArchivo);
                         MessageBox.Show("Archivo renombrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        dataGridViewJuegos.DataSource = null;
+                        textBoxRutaArchivo.Text = nuevoArchivo;
                     }
                     catch (Exception ex)
                     {

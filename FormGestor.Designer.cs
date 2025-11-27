@@ -45,11 +45,6 @@
             this.radioButton15 = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelTiempo = new System.Windows.Forms.Label();
             this.labelErrores = new System.Windows.Forms.Label();
             this.labelPuntuacion = new System.Windows.Forms.Label();
@@ -57,15 +52,25 @@
             this.labelNombre = new System.Windows.Forms.Label();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.dataGridViewJuegos = new System.Windows.Forms.DataGridView();
+            this.labelAyudas = new System.Windows.Forms.Label();
+            this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStats)).BeginInit();
             this.groupBoxEstadisticas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJuegos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJuegos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +80,7 @@
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(14, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 17);
+            this.label1.Size = new System.Drawing.Size(36, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ruta";
             // 
@@ -112,6 +117,8 @@
             // 
             this.panelDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
             this.panelDetalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDetalle.Controls.Add(this.pictureBox6);
+            this.panelDetalle.Controls.Add(this.labelAyudas);
             this.panelDetalle.Controls.Add(this.linkLabel1);
             this.panelDetalle.Controls.Add(this.chartStats);
             this.panelDetalle.Controls.Add(this.groupBoxEstadisticas);
@@ -137,7 +144,7 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(856, 296);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(49, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(48, 17);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Limpiar";
@@ -183,7 +190,7 @@
             this.radioButtonTodos.AutoSize = true;
             this.radioButtonTodos.Location = new System.Drawing.Point(332, 23);
             this.radioButtonTodos.Name = "radioButtonTodos";
-            this.radioButtonTodos.Size = new System.Drawing.Size(59, 21);
+            this.radioButtonTodos.Size = new System.Drawing.Size(60, 21);
             this.radioButtonTodos.TabIndex = 3;
             this.radioButtonTodos.TabStop = true;
             this.radioButtonTodos.Tag = "-1";
@@ -195,7 +202,7 @@
             this.radioButton15.AutoSize = true;
             this.radioButton15.Location = new System.Drawing.Point(240, 24);
             this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(36, 21);
+            this.radioButton15.Size = new System.Drawing.Size(40, 21);
             this.radioButton15.TabIndex = 2;
             this.radioButton15.TabStop = true;
             this.radioButton15.Tag = "15";
@@ -207,7 +214,7 @@
             this.radioButton10.AutoSize = true;
             this.radioButton10.Location = new System.Drawing.Point(134, 23);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(37, 21);
+            this.radioButton10.Size = new System.Drawing.Size(40, 21);
             this.radioButton10.TabIndex = 1;
             this.radioButton10.TabStop = true;
             this.radioButton10.Tag = "10";
@@ -219,12 +226,130 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.Location = new System.Drawing.Point(19, 23);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(32, 21);
+            this.radioButton5.Size = new System.Drawing.Size(33, 21);
             this.radioButton5.TabIndex = 0;
             this.radioButton5.TabStop = true;
             this.radioButton5.Tag = "5";
             this.radioButton5.Text = "5";
             this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // labelTiempo
+            // 
+            this.labelTiempo.AutoSize = true;
+            this.labelTiempo.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTiempo.ForeColor = System.Drawing.Color.White;
+            this.labelTiempo.Location = new System.Drawing.Point(319, 159);
+            this.labelTiempo.Name = "labelTiempo";
+            this.labelTiempo.Size = new System.Drawing.Size(72, 25);
+            this.labelTiempo.TabIndex = 4;
+            this.labelTiempo.Text = "tiempo";
+            // 
+            // labelErrores
+            // 
+            this.labelErrores.AutoSize = true;
+            this.labelErrores.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErrores.ForeColor = System.Drawing.Color.White;
+            this.labelErrores.Location = new System.Drawing.Point(102, 159);
+            this.labelErrores.Name = "labelErrores";
+            this.labelErrores.Size = new System.Drawing.Size(72, 25);
+            this.labelErrores.TabIndex = 3;
+            this.labelErrores.Text = "errores";
+            // 
+            // labelPuntuacion
+            // 
+            this.labelPuntuacion.AutoSize = true;
+            this.labelPuntuacion.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPuntuacion.ForeColor = System.Drawing.Color.White;
+            this.labelPuntuacion.Location = new System.Drawing.Point(319, 96);
+            this.labelPuntuacion.Name = "labelPuntuacion";
+            this.labelPuntuacion.Size = new System.Drawing.Size(108, 25);
+            this.labelPuntuacion.TabIndex = 2;
+            this.labelPuntuacion.Text = "puntuación";
+            // 
+            // labelPreguntas
+            // 
+            this.labelPreguntas.AutoSize = true;
+            this.labelPreguntas.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPreguntas.ForeColor = System.Drawing.Color.White;
+            this.labelPreguntas.Location = new System.Drawing.Point(101, 96);
+            this.labelPreguntas.Name = "labelPreguntas";
+            this.labelPreguntas.Size = new System.Drawing.Size(98, 25);
+            this.labelPreguntas.TabIndex = 1;
+            this.labelPreguntas.Text = "preguntas";
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Montserrat ExtraBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.ForeColor = System.Drawing.Color.White;
+            this.labelNombre.Location = new System.Drawing.Point(101, 28);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(97, 31);
+            this.labelNombre.TabIndex = 0;
+            this.labelNombre.Text = "nombre";
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditar.Location = new System.Drawing.Point(861, 538);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditar.TabIndex = 9;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
+            // 
+            // dataGridViewJuegos
+            // 
+            this.dataGridViewJuegos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewJuegos.Location = new System.Drawing.Point(17, 39);
+            this.dataGridViewJuegos.Name = "dataGridViewJuegos";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewJuegos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewJuegos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridViewJuegos.Size = new System.Drawing.Size(919, 150);
+            this.dataGridViewJuegos.TabIndex = 6;
+            this.dataGridViewJuegos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJuegos_CellEndEdit);
+            this.dataGridViewJuegos.SelectionChanged += new System.EventHandler(this.dataGridViewJuegos_SelectionChanged);
+            // 
+            // labelAyudas
+            // 
+            this.labelAyudas.AutoSize = true;
+            this.labelAyudas.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAyudas.ForeColor = System.Drawing.Color.White;
+            this.labelAyudas.Location = new System.Drawing.Point(100, 216);
+            this.labelAyudas.Name = "labelAyudas";
+            this.labelAyudas.Size = new System.Drawing.Size(75, 25);
+            this.labelAyudas.TabIndex = 13;
+            this.labelAyudas.Text = "Ayudas";
+            // 
+            // pictureBoxSettings
+            // 
+            this.pictureBoxSettings.BackgroundImage = global::GestorJuegos.Properties.Resources.settings;
+            this.pictureBoxSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSettings.Image = global::GestorJuegos.Properties.Resources.settings;
+            this.pictureBoxSettings.Location = new System.Drawing.Point(17, 535);
+            this.pictureBoxSettings.Name = "pictureBoxSettings";
+            this.pictureBoxSettings.Size = new System.Drawing.Size(44, 39);
+            this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSettings.TabIndex = 13;
+            this.pictureBoxSettings.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::GestorJuegos.Properties.Resources.ayudas;
+            this.pictureBox6.Location = new System.Drawing.Point(17, 201);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(88, 48);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 14;
+            this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -276,104 +401,20 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // labelTiempo
-            // 
-            this.labelTiempo.AutoSize = true;
-            this.labelTiempo.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTiempo.ForeColor = System.Drawing.Color.White;
-            this.labelTiempo.Location = new System.Drawing.Point(319, 159);
-            this.labelTiempo.Name = "labelTiempo";
-            this.labelTiempo.Size = new System.Drawing.Size(73, 25);
-            this.labelTiempo.TabIndex = 4;
-            this.labelTiempo.Text = "tiempo";
-            // 
-            // labelErrores
-            // 
-            this.labelErrores.AutoSize = true;
-            this.labelErrores.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelErrores.ForeColor = System.Drawing.Color.White;
-            this.labelErrores.Location = new System.Drawing.Point(102, 159);
-            this.labelErrores.Name = "labelErrores";
-            this.labelErrores.Size = new System.Drawing.Size(73, 25);
-            this.labelErrores.TabIndex = 3;
-            this.labelErrores.Text = "errores";
-            // 
-            // labelPuntuacion
-            // 
-            this.labelPuntuacion.AutoSize = true;
-            this.labelPuntuacion.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPuntuacion.ForeColor = System.Drawing.Color.White;
-            this.labelPuntuacion.Location = new System.Drawing.Point(319, 96);
-            this.labelPuntuacion.Name = "labelPuntuacion";
-            this.labelPuntuacion.Size = new System.Drawing.Size(110, 25);
-            this.labelPuntuacion.TabIndex = 2;
-            this.labelPuntuacion.Text = "puntuación";
-            // 
-            // labelPreguntas
-            // 
-            this.labelPreguntas.AutoSize = true;
-            this.labelPreguntas.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPreguntas.ForeColor = System.Drawing.Color.White;
-            this.labelPreguntas.Location = new System.Drawing.Point(101, 96);
-            this.labelPreguntas.Name = "labelPreguntas";
-            this.labelPreguntas.Size = new System.Drawing.Size(99, 25);
-            this.labelPreguntas.TabIndex = 1;
-            this.labelPreguntas.Text = "preguntas";
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Montserrat ExtraBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.ForeColor = System.Drawing.Color.White;
-            this.labelNombre.Location = new System.Drawing.Point(101, 28);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(98, 31);
-            this.labelNombre.TabIndex = 0;
-            this.labelNombre.Text = "nombre";
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(861, 538);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditar.TabIndex = 9;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // dataGridViewJuegos
-            // 
-            this.dataGridViewJuegos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewJuegos.Location = new System.Drawing.Point(17, 39);
-            this.dataGridViewJuegos.Name = "dataGridViewJuegos";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewJuegos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewJuegos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewJuegos.Size = new System.Drawing.Size(919, 150);
-            this.dataGridViewJuegos.TabIndex = 6;
-            this.dataGridViewJuegos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJuegos_CellEndEdit);
-            this.dataGridViewJuegos.SelectionChanged += new System.EventHandler(this.dataGridViewJuegos_SelectionChanged);
-            // 
             // GestorJuegos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(948, 573);
+            this.ClientSize = new System.Drawing.Size(948, 582);
+            this.Controls.Add(this.pictureBoxSettings);
             this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.panelDetalle);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.dataGridViewJuegos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxRutaArchivo);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelDetalle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestorJuegos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -384,12 +425,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartStats)).EndInit();
             this.groupBoxEstadisticas.ResumeLayout(false);
             this.groupBoxEstadisticas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJuegos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJuegos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,5 +463,8 @@
         private System.Windows.Forms.DataGridView dataGridViewJuegos;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartStats;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox pictureBoxSettings;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label labelAyudas;
     }
 }
